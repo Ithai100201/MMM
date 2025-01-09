@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a043c;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .settings-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #1c1c3c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-label {
+            color: white;
+        }
+
+        .profile-picture {
+            display: block;
+            margin: 20px auto;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        .btn-primary {
+            background-color: #3b5998;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #2d4373;
+        }
+    </style>
+</head>
+<body>
+
+<div class="settings-container">
+    <h2 class="text-center">Settings</h2>
+
+    <!-- Profile Picture Section -->
+    <div class="mb-4 text-center">
+        <img src="../media/Billie.jpeg" alt="Profile Picture" class="profile-picture" id="profile-picture-preview">
+        <label for="profile-picture-input" class="btn btn-primary mt-2">Change Profile Picture</label>
+        <input type="file" id="profile-picture-input" class="form-control d-none">
+    </div>
+
+    <!-- Username Section -->
+    <div class="mb-3">
+        <label for="username" class="form-label">Change Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter new username">
+    </div>
+
+    <!-- Password Section -->
+    <div class="mb-3">
+        <label for="password" class="form-label">Change Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter new password">
+    </div>
+
+    <!-- Confirm Password Section -->
+    <div class="mb-3">
+        <label for="confirm-password" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirm-password" placeholder="Re-enter new password">
+    </div>
+
+    <!-- Save Changes Button -->
+    <div class="text-center">
+        <button class="btn btn-primary w-100" id="save-changes">Save Changes</button>
+    </div>
+</div>
+
+<script>
+    // JavaScript for profile picture preview
+    const profilePictureInput = document.getElementById('profile-picture-input');
+    const profilePicturePreview = document.getElementById('profile-picture-preview');
+
+    profilePictureInput.addEventListener('change', function () {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                profilePicturePreview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // JavaScript for Save Changes Button (can later connect to backend)
+    const saveChangesButton = document.getElementById('save-changes');
+    saveChangesButton.addEventListener('click', function () {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+
+        alert('Changes saved successfully!');
+    });
+</script>
+<div class="text-center my-3">
+    <a href="profile.html" class="btn btn-secondary">Back</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

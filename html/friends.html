@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a043c;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .friends-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #1c1c3c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .friend-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .friend-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #555;
+        }
+
+        .friend-list li:last-child {
+            border-bottom: none;
+        }
+
+        .friend-list img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .btn-danger, .btn-primary {
+            border: none;
+        }
+
+        .btn-danger:hover {
+            background-color: #e63946;
+        }
+
+        .btn-primary:hover {
+            background-color: #2d4373;
+        }
+    </style>
+</head>
+<body>
+
+<div class="friends-container">
+    <h2 class="text-center">Friends</h2>
+
+    <!-- Add Friend Section -->
+    <div class="mb-3">
+        <label for="friend-name" class="form-label">Add Friend</label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="friend-name" placeholder="Enter friend's name">
+            <button class="btn btn-primary" id="add-friend-btn">Add</button>
+        </div>
+    </div>
+
+    <!-- Friend List -->
+    <ul class="friend-list" id="friend-list">
+        <!-- Example friend -->
+        <li>
+            <div>
+                <img src="../media/default-avatar.jpeg" alt="Friend">
+                <span class="ms-2">John Doe</span>
+            </div>
+            <button class="btn btn-danger btn-sm remove-friend-btn">Remove</button>
+        </li>
+    </ul>
+</div>
+
+<script>
+    const friendList = document.getElementById('friend-list');
+    const addFriendBtn = document.getElementById('add-friend-btn');
+    const friendNameInput = document.getElementById('friend-name');
+
+    // Add a new friend
+    addFriendBtn.addEventListener('click', function () {
+        const friendName = friendNameInput.value.trim();
+
+        if (friendName === '') {
+            alert('Please enter a valid name!');
+            return;
+        }
+
+        // Create a new list item
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <div>
+                <img src="../media/default-avatar.jpeg" alt="Friend">
+                <span class="ms-2">${friendName}</span>
+            </div>
+            <button class="btn btn-danger btn-sm remove-friend-btn">Remove</button>
+        `;
+
+        // Append to the friend list
+        friendList.appendChild(li);
+
+        // Clear the input field
+        friendNameInput.value = '';
+
+        // Add event listener to the "Remove" button
+        const removeBtn = li.querySelector('.remove-friend-btn');
+        removeBtn.addEventListener('click', function () {
+            li.remove();
+        });
+    });
+
+    // Remove a friend
+    document.querySelectorAll('.remove-friend-btn').forEach(function (button) {
+        button.addEventListener('click', function () {
+            button.parentElement.remove();
+        });
+    });
+</script>
+<div class="text-center my-3">
+    <a href="profile.html" class="btn btn-secondary">Back</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

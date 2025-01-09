@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Feed</title>
-    <link rel="stylesheet" href="../CSS/homeStyle.css">
+    <link rel="stylesheet" href="../css/indexStyle.css">
 </head>
 <body>
 
 <!-- de icons heb ik online gevonden als je een copy van de code gebruikt krijg je de zelfde zonder iets te downloaden. -Sjoerd -->
 <div class="navbar">
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+    <a href="profile.html">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><svg/>
+    </a>
+
     <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="2"/><rect x="5" y="11" width="14" height="2"/><rect x="5" y="16" width="14" height="2"/></svg>
 </div>
 
 <!--voor nu heb ik place holder images hier neer gezet. -Sjoerd -->
 <div class="feed">
     <div class="post">
-        <img src="https://via.placeholder.com/600x400" alt="placeholder1">
+        <img src="https://via.placeholder.com/600x600" alt="placeholder1">
         <div class="content">
             <div class="username">Artist</div>
             <div class="text">text</div>
@@ -25,7 +28,7 @@
     </div>
 
     <div class="post">
-        <img src="https://via.placeholder.com/600x400" alt="placeholder2">
+        <img src="https://via.placeholder.com/600x600" alt="placeholder2">
         <div class="content">
             <div class="username">Artist</div>
             <div class="text">text</div>
@@ -34,9 +37,27 @@
 </div>
 
 <div class="footer">
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3L2 12h3v7h14v-7h3L12 3z"/></svg>
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    <a href="index.html">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 3L2 12h3v7h14v-7h3L12 3z"/></svg>
+    </a>
+
+
+
+    <!-- gaat naar de search page -Sjoerd -->
+    <a href="search.html">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+        </svg>
+    </a>
+
+    <a href="nieuws.html">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+        </svg>
+    </a>
+
 </div>
+
 </body>
 </html>

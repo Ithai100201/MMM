@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a043c;
+    color: white;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #0a043c;
+}
+
+.navbar .icon {
+    width: 25px;
+    height: 25px;
+    fill: #ffffff;
+}
+
+/* Admin Dashboard Section */
+.admin-dashboard {
+    text-align: center;
+    margin: 20px;
+}
+
+.admin-dashboard h1 {
+    margin-bottom: 20px;
+}
+
+/* User Management */
+.user-management {
+    margin-bottom: 30px;
+}
+
+.manage-users-btn, .add-artist-btn{
+    background-color: #1c1c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.manage-users-btn:hover, .add-artist-btn:hover{
+    background-color: #ffffff;
+    color: #0a043c;
+}
+
+/* Admin Stats */
+.admin-stats {
+    padding: 15px;
+}
+
+.admin-stats h2 {
+    margin-bottom: 15px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.stat-card {
+    background-color: #1c1c3c;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.stat-card h3 {
+    font-size: 18px;
+}
+
+.stat-card p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #0a043c;
+}
+
+.footer .icon {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
