@@ -19,6 +19,8 @@
     <button type="submit" name="login">Inloggen</button>
 </form>
 
+<p>Heb je geen account? <a href="register_artist.php">Registreer hier!</a></p>
+
 <!-- verstuurd melding bij bij fout of succesvolle inlog -->
 <?php if (isset($_SESSION['status'])): ?>
     <p><?php echo $_SESSION['status']; ?></p>

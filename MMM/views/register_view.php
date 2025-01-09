@@ -9,7 +9,7 @@
 <h1>Artiest Registratie</h1>
 
 <!-- Formulier voor registratie -->
-<form action="../register_artist.php" method="POST" enctype="multipart/form-data">
+<form action="../register.php" method="POST" enctype="multipart/form-data">
     <label for="naam">Artiestnaam</label>
     <input type="text" name="naam" id="naam" required>
 
@@ -23,6 +23,9 @@
     <input type="file" name="profielFoto" id="profielFoto" accept="image/*">
 
     <button type="submit" name="register">Registreer</button>
+
+
+    <p>Heb je al een account? <a href="login.php">log hier in!</a></p>
 </form>
 </body>
 </html>

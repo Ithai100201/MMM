@@ -42,4 +42,4 @@ function registerArtist($naam, $email, $wachtwoordHash, $bestandsnaam) {
 }
 
 // Nu wordt de HTML view geladen na de logica
-include 'views/register_artist_view.php'; // Laadt de view zonder redirect
+include 'views/register_view.php'; // Laadt de view zonder redirect
