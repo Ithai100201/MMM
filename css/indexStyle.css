@@ -3,7 +3,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #0a043c;
     color: white;
-    overflow: hidden;
 }
 
 .navbar {
@@ -27,8 +26,7 @@ body {
 .post {
     background-color: #1c1c3c;
     border-radius: 10px;
-    margin-bottom: 20px;
-    overflow: hidden;
+    margin-bottom: 60px;
 }
 
 .post img {
